@@ -16,44 +16,48 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$EquipmentState {
-  List<EquipmentDataModel> get availableEquipment =>
-      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(List<EquipmentDataModel> availableEquipment)
-        loaded,
+        fetchEquipments,
+    required TResult Function() loading,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<EquipmentDataModel> availableEquipment)? loaded,
+    TResult? Function(List<EquipmentDataModel> availableEquipment)?
+        fetchEquipments,
+    TResult? Function()? loading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<EquipmentDataModel> availableEquipment)? loaded,
+    TResult Function(List<EquipmentDataModel> availableEquipment)?
+        fetchEquipments,
+    TResult Function()? loading,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Loaded value) loaded,
+    required TResult Function(FetchEquipments value) fetchEquipments,
+    required TResult Function(Loading value) loading,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Loaded value)? loaded,
+    TResult? Function(FetchEquipments value)? fetchEquipments,
+    TResult? Function(Loading value)? loading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Loaded value)? loaded,
+    TResult Function(FetchEquipments value)? fetchEquipments,
+    TResult Function(Loading value)? loading,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $EquipmentStateCopyWith<EquipmentState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -62,8 +66,6 @@ abstract class $EquipmentStateCopyWith<$Res> {
   factory $EquipmentStateCopyWith(
           EquipmentState value, $Res Function(EquipmentState) then) =
       _$EquipmentStateCopyWithImpl<$Res, EquipmentState>;
-  @useResult
-  $Res call({List<EquipmentDataModel> availableEquipment});
 }
 
 /// @nodoc
@@ -71,40 +73,27 @@ class _$EquipmentStateCopyWithImpl<$Res, $Val extends EquipmentState>
     implements $EquipmentStateCopyWith<$Res> {
   _$EquipmentStateCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
+// ignore: unused_field
   final $Val _value;
-  // ignore: unused_field
+// ignore: unused_field
   final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? availableEquipment = null,
-  }) {
-    return _then(_value.copyWith(
-      availableEquipment: null == availableEquipment
-          ? _value.availableEquipment
-          : availableEquipment // ignore: cast_nullable_to_non_nullable
-              as List<EquipmentDataModel>,
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$LoadedCopyWith<$Res>
-    implements $EquipmentStateCopyWith<$Res> {
-  factory _$$LoadedCopyWith(_$Loaded value, $Res Function(_$Loaded) then) =
-      __$$LoadedCopyWithImpl<$Res>;
-  @override
+abstract class _$$FetchEquipmentsCopyWith<$Res> {
+  factory _$$FetchEquipmentsCopyWith(
+          _$FetchEquipments value, $Res Function(_$FetchEquipments) then) =
+      __$$FetchEquipmentsCopyWithImpl<$Res>;
   @useResult
   $Res call({List<EquipmentDataModel> availableEquipment});
 }
 
 /// @nodoc
-class __$$LoadedCopyWithImpl<$Res>
-    extends _$EquipmentStateCopyWithImpl<$Res, _$Loaded>
-    implements _$$LoadedCopyWith<$Res> {
-  __$$LoadedCopyWithImpl(_$Loaded _value, $Res Function(_$Loaded) _then)
+class __$$FetchEquipmentsCopyWithImpl<$Res>
+    extends _$EquipmentStateCopyWithImpl<$Res, _$FetchEquipments>
+    implements _$$FetchEquipmentsCopyWith<$Res> {
+  __$$FetchEquipmentsCopyWithImpl(
+      _$FetchEquipments _value, $Res Function(_$FetchEquipments) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -112,7 +101,7 @@ class __$$LoadedCopyWithImpl<$Res>
   $Res call({
     Object? availableEquipment = null,
   }) {
-    return _then(_$Loaded(
+    return _then(_$FetchEquipments(
       null == availableEquipment
           ? _value._availableEquipment
           : availableEquipment // ignore: cast_nullable_to_non_nullable
@@ -123,8 +112,8 @@ class __$$LoadedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$Loaded implements Loaded {
-  const _$Loaded(final List<EquipmentDataModel> availableEquipment)
+class _$FetchEquipments implements FetchEquipments {
+  const _$FetchEquipments(final List<EquipmentDataModel> availableEquipment)
       : _availableEquipment = availableEquipment;
 
   final List<EquipmentDataModel> _availableEquipment;
@@ -132,20 +121,20 @@ class _$Loaded implements Loaded {
   List<EquipmentDataModel> get availableEquipment {
     if (_availableEquipment is EqualUnmodifiableListView)
       return _availableEquipment;
-    // ignore: implicit_dynamic_type
+// ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_availableEquipment);
   }
 
   @override
   String toString() {
-    return 'EquipmentState.loaded(availableEquipment: $availableEquipment)';
+    return 'EquipmentState.fetchEquipments(availableEquipment: $availableEquipment)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$Loaded &&
+            other is _$FetchEquipments &&
             const DeepCollectionEquality()
                 .equals(other._availableEquipment, _availableEquipment));
   }
@@ -157,34 +146,39 @@ class _$Loaded implements Loaded {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$LoadedCopyWith<_$Loaded> get copyWith =>
-      __$$LoadedCopyWithImpl<_$Loaded>(this, _$identity);
+  _$$FetchEquipmentsCopyWith<_$FetchEquipments> get copyWith =>
+      __$$FetchEquipmentsCopyWithImpl<_$FetchEquipments>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(List<EquipmentDataModel> availableEquipment)
-        loaded,
+        fetchEquipments,
+    required TResult Function() loading,
   }) {
-    return loaded(availableEquipment);
+    return fetchEquipments(availableEquipment);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<EquipmentDataModel> availableEquipment)? loaded,
+    TResult? Function(List<EquipmentDataModel> availableEquipment)?
+        fetchEquipments,
+    TResult? Function()? loading,
   }) {
-    return loaded?.call(availableEquipment);
+    return fetchEquipments?.call(availableEquipment);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<EquipmentDataModel> availableEquipment)? loaded,
+    TResult Function(List<EquipmentDataModel> availableEquipment)?
+        fetchEquipments,
+    TResult Function()? loading,
     required TResult orElse(),
   }) {
-    if (loaded != null) {
-      return loaded(availableEquipment);
+    if (fetchEquipments != null) {
+      return fetchEquipments(availableEquipment);
     }
     return orElse();
   }
@@ -192,40 +186,144 @@ class _$Loaded implements Loaded {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Loaded value) loaded,
+    required TResult Function(FetchEquipments value) fetchEquipments,
+    required TResult Function(Loading value) loading,
   }) {
-    return loaded(this);
+    return fetchEquipments(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Loaded value)? loaded,
+    TResult? Function(FetchEquipments value)? fetchEquipments,
+    TResult? Function(Loading value)? loading,
   }) {
-    return loaded?.call(this);
+    return fetchEquipments?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Loaded value)? loaded,
+    TResult Function(FetchEquipments value)? fetchEquipments,
+    TResult Function(Loading value)? loading,
     required TResult orElse(),
   }) {
-    if (loaded != null) {
-      return loaded(this);
+    if (fetchEquipments != null) {
+      return fetchEquipments(this);
     }
     return orElse();
   }
 }
 
-abstract class Loaded implements EquipmentState {
-  const factory Loaded(final List<EquipmentDataModel> availableEquipment) =
-      _$Loaded;
+abstract class FetchEquipments implements EquipmentState {
+  const factory FetchEquipments(
+      final List<EquipmentDataModel> availableEquipment) = _$FetchEquipments;
+
+  List<EquipmentDataModel> get availableEquipment;
+  @JsonKey(ignore: true)
+  _$$FetchEquipmentsCopyWith<_$FetchEquipments> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LoadingCopyWith<$Res> {
+  factory _$$LoadingCopyWith(_$Loading value, $Res Function(_$Loading) then) =
+      __$$LoadingCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadingCopyWithImpl<$Res>
+    extends _$EquipmentStateCopyWithImpl<$Res, _$Loading>
+    implements _$$LoadingCopyWith<$Res> {
+  __$$LoadingCopyWithImpl(_$Loading _value, $Res Function(_$Loading) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$Loading implements Loading {
+  const _$Loading();
 
   @override
-  List<EquipmentDataModel> get availableEquipment;
+  String toString() {
+    return 'EquipmentState.loading()';
+  }
+
   @override
-  @JsonKey(ignore: true)
-  _$$LoadedCopyWith<_$Loaded> get copyWith =>
-      throw _privateConstructorUsedError;
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$Loading);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<EquipmentDataModel> availableEquipment)
+        fetchEquipments,
+    required TResult Function() loading,
+  }) {
+    return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(List<EquipmentDataModel> availableEquipment)?
+        fetchEquipments,
+    TResult? Function()? loading,
+  }) {
+    return loading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<EquipmentDataModel> availableEquipment)?
+        fetchEquipments,
+    TResult Function()? loading,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FetchEquipments value) fetchEquipments,
+    required TResult Function(Loading value) loading,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(FetchEquipments value)? fetchEquipments,
+    TResult? Function(Loading value)? loading,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FetchEquipments value)? fetchEquipments,
+    TResult Function(Loading value)? loading,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Loading implements EquipmentState {
+  const factory Loading() = _$Loading;
 }
