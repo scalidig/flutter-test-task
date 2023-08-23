@@ -1,16 +1,4 @@
-# task_equipment
+# Task equipment
 
-A new Flutter project.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Screen Recording 2023-08-23 at 5 02 33 PM](https://github.com/scalidig/flutter-test-task/assets/68838176/f88056d8-2ecd-4227-bb4e-9b5c5df25318)
