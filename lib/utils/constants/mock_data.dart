@@ -3,18 +3,19 @@ import 'package:task_equipment/utils/constants/asset_paths.dart';
 
 class MockData {
   static final List<String> _titlesOfAvailableEquipment = [
-    'Body Weight',
+    'Bodyweight',
     'Dumbbells',
     'Bands',
     'Machines',
     'Rods',
     'Plates'
   ];
-  static List<EquipmentDataModel> availableEquipment = List.generate(
-      _titlesOfAvailableEquipment.length,
-      (index) => EquipmentDataModel(
-          id: index,
-          isSelected: false,
-          title: _titlesOfAvailableEquipment[index],
-          imagePath: AssetPaths.bodyWeight));
+  static final List<EquipmentDataModel> availableEquipment = List.unmodifiable(
+      List.generate(
+          _titlesOfAvailableEquipment.length,
+          (index) => EquipmentDataModel(
+              id: index,
+              isSelected: false,
+              title: _titlesOfAvailableEquipment[index],
+              imagePath: AssetPaths.bodyWeight)));
 }

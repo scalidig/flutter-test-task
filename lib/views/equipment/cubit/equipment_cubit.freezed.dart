@@ -23,7 +23,6 @@ mixin _$EquipmentState {
     required TResult Function() loading,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(List<EquipmentDataModel> availableEquipment)?
@@ -45,7 +44,6 @@ mixin _$EquipmentState {
     required TResult Function(Loading value) loading,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(FetchEquipments value)? fetchEquipments,
@@ -73,9 +71,9 @@ class _$EquipmentStateCopyWithImpl<$Res, $Val extends EquipmentState>
     implements $EquipmentStateCopyWith<$Res> {
   _$EquipmentStateCopyWithImpl(this._value, this._then);
 
-// ignore: unused_field
+  // ignore: unused_field
   final $Val _value;
-// ignore: unused_field
+  // ignore: unused_field
   final $Res Function($Val) _then;
 }
 
@@ -121,7 +119,7 @@ class _$FetchEquipments implements FetchEquipments {
   List<EquipmentDataModel> get availableEquipment {
     if (_availableEquipment is EqualUnmodifiableListView)
       return _availableEquipment;
-// ignore: implicit_dynamic_type
+    // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_availableEquipment);
   }
 
